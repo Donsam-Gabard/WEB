@@ -1,0 +1,241 @@
+/* Reset global et réglages de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f9fa;
+    color: #2c3e50;
+    line-height: 1.7;
+}
+
+/* En-tête avec image de fond et dégradé (linear-gradient) */
+.main-header {
+    position: relative;
+    color: #1c69ed;
+    text-align: center;
+    padding: 100px 20px;
+    
+    /* MODIFIER ICI :images/header.jpg par votre image de fond */
+    background-image: url('images/jacmel1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Couleur de fond de secours si l'image ne charge pas */
+    background-color: #0b3c5d; 
+}
+
+/* Overlay pour le dégradé sur l'image */
+.main-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(193, 218, 235, 0.9), rgba(230, 205, 183, 0.8));
+    z-index: 1;
+}
+
+/* Contenu de l'en-tête pour qu'il soit au-dessus de l'overlay */
+.main-header .header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.main-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(212, 212, 215, 0.3);
+}
+
+.main-header p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #1653ee;
+}
+
+/* Barre de navigation utilisant FLEXBOX */
+.main-nav {
+    background-color: #0b3c5d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pour la réactivité */
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px 30px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #db7219; /* Teinte chaude orangée */
+    color: #ffffff;
+}
+
+/* Conteneur principal */
+main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+/* Sections de textes détaillés */
+.content-section {
+    background-color: #ffffff;
+    padding: 50px;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    border-left: 6px solid #0b3c5d;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Style spécifique pour les sections avec image (Flexbox) */
+.content-section.with-image {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.section-image-container {
+    flex: 1; /* Prend la moitié de l'espace */
+    text-align: center;
+}
+
+.section-image-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-image-container figcaption {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.content-section article {
+    flex: 1; /* Prend l'autre moitié de l'espace */
+}
+
+.content-section h2 {
+    color: #0b3c5d;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.content-section p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+    color: #4f5d73;
+}
+
+.content-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Style de la galerie et GRID LAYOUT */
+.gallery-section {
+    margin-top: 80px;
+    padding: 30px 0;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: #0b3c5d;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Hauteur fixe pour l'uniformité */
+    object-fit: cover; /* Recadre l'image pour l'adapter */
+    display: block;
+    background-color: #e0e6ed; /* Fond gris en attendant que vous mettiez votre image */
+}
+
+.gallery-item figcaption {
+    padding: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #2c3e50;
+    border-top: 5px solid #db7219;
+}
+
+/* Pied de page */
+.main-footer {
+    background-color: #0b3c5d;
+    color: #a5b1c2;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 100px;
+    font-size: 1rem;
+    border-top: 6px solid #db7219;
+}
+
+/* Media Queries pour la réactivité sur mobile */
+@media (max-width: 768px) {
+    .content-section.with-image {
+        flex-direction: column; /* Empiler les éléments sur mobile */
+    }
+
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-header p {
+        font-size: 1.1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-nav a {
+        padding: 15px 20px;
+    }
+}
